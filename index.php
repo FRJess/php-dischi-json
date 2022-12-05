@@ -10,6 +10,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+  integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- AXIOS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -27,7 +32,6 @@
 <body>
   <div id="app">
     <header class="bg-dark">
-      <img src="/img/logo-small.svg" alt="logo Spotify">
       <div class="container d-flex align-items-center justify-content-center py-2">
         <div class="row text-white">
           <div class="col">
@@ -39,22 +43,36 @@
 
     <main class="jt-container">
 
-      <div class="container py-5">
+      <div class="container py-5 position-relative">
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col" v-for="(album, index) in albumsList" :key="index">
-            <div class="card album-card mb-5 text-center text-light p-5">
+            <div @click.stop="getDetails(index)" class="card h-100 album-card mb-5 text-center text-light p-5">
               <img :src="album.poster" :alt="album.title">
               <div class="card-body text-center">
-                <h5 class="album mt-3">{{album.title}}</h5>
+                <h5 class="album my-4">{{album.title}}</h5>
                 <p class="artist">{{album.author}}</p>
                 <p class="publication-year">{{album.year}}</p>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="details-box text-white" v-if="showDetails">
+          <div class="position-relative text-center">
+            <img :src="albumDetails.poster" :alt="albumDetails.title">
+            <h5 class="py-4">{{albumDetails.title}}</h5>
+            <p class="fw-light">{{albumDetails.author}}</p>
+            <p>{{albumDetails.year}}</p>
+            <p class="fw-light">Genre: {{albumDetails.genre}}</p>
+          </div>
+          <div class="position-absolute close-button" @click.stop="showDetails = !showDetails">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
   
       </div>
+
 
     </main>
   </div>
