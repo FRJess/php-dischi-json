@@ -1,8 +1,8 @@
 <?php
 
-$string = file_get_contents('dischi.json');
+$albumString = file_get_contents('dischi.json');
 
-$disklist = json_decode($string, true);
+$albums = json_decode($albumString, true);
 
 header('Content-Type: application/json');
-echo json_encode($disklist);
+echo json_encode($albums);

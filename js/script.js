@@ -6,22 +6,22 @@ createApp({
   data() {
     return {
       apiUrl: 'server.php',
-      disks: [],
+      albumsList: [],
     }
   },
 
   methods: {
-    getDisks() {
+    getAlbums() {
       axios.get(this.apiUrl)
         .then(result => {
-          this.disks = result.data;
-          console.log(this.disks);
+          this.albumsList = result.data;
+          console.log(this.albumsList);
         })
     }
   },
 
   mounted() {
-    this.getDisks();
+    this.getAlbums();
     console.log('APP OK')
   }
 }).mount('#app');

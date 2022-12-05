@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css">
 
   <!-- VUE -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@3"></script>
 
   <title>Dischi</title>
 </head>
@@ -28,17 +28,24 @@
   <div id="app">
     <header class="bg-dark">
       <!-- <img src="/img/logo-small.svg" alt="logo Spotify"> -->
+      <div class="container d-flex align-items-center justify-content-center">
+        <div class="row text-white">
+          <div class="col">
+            <h1>My favorites albums</h1>
+          </div>
+        </div>
+      </div>
     </header>
 
     <div class="container py-5">
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" v-for="(disk, index) in disks">
-          <div class="card disk-card">
-            <img :src="disk.poster" :alt="disk.title">
+        <div class="col" v-for="(album, index) in albumsList" :key="index">
+          <div class="card album-card">
+            <img :src="album.poster" :alt="album.title">
             <div class="card-body text-center">
-              <h5 class="py-3">{{disk.title}}</h5>
-              <p class="fw-light">{{disk.author}}</p>
-              <p>{{disk.year}}</p>
+              <h5 class="py-3">{{album.title}}</h5>
+              <p class="fw-light">{{album.author}}</p>
+              <p>{{album.year}}</p>
             </div>
           </div>
         </div>
