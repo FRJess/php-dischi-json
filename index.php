@@ -19,10 +19,32 @@
   <!-- VUE -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <title>Modello</title>
+  <title>Dischi</title>
 </head>
 
 <!-- Inizio Body -->
+<header class="bg-dark">
+  <img src="/img/logo-small.svg" alt="logo Spotify">
+</header>
+
+<main>
+  <div class="container py-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Artista</p>
+            <p class="card-text">Anno</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
 
 <body>
 
@@ -32,3 +54,17 @@
 <!-- Fine Body -->
 
 </html>
+
+
+<!-- Descrizione
+Dobbiamo creare una web-app che permetta di leggere una lista di dischi presente nel nostro server.
+
+Consigli
+Nello svolgere l’esercizio seguite un approccio graduale.
+Prima assicuratevi che la vostra pagina index.php (il vostro front-end) riesca a comunicare correttamente con il vostro script PHP (le vostre “API”).
+Solo a questo punto sarà utile passare alla lettura della lista da un file JSON.
+BONUS
+Scegliete uno o più fra queste funzionalità
+- Al click su un disco, recuperare e mostrare i dati del disco selezionato
+- Creare una selezione (sempre tramite API) per genere musicale
+- Aggiungere/rimuovere un disco (per l’immagine utilizzare una URL remota) -->
