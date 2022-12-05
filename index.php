@@ -38,15 +38,17 @@
     </header>
 
     <main class="jt-container">
+
       <div class="container py-5">
+
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col" v-for="(album, index) in albumsList" :key="index">
-            <div class="card album-card">
+            <div class="card album-card mb-5 text-center text-light p-5">
               <img :src="album.poster" :alt="album.title">
               <div class="card-body text-center">
-                <h5 class="py-3">{{album.title}}</h5>
-                <p class="fw-light">{{album.author}}</p>
-                <p>{{album.year}}</p>
+                <h5 class="album mt-3">{{album.title}}</h5>
+                <p class="artist">{{album.author}}</p>
+                <p class="publication-year">{{album.year}}</p>
               </div>
             </div>
           </div>
