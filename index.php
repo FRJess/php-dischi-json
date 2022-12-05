@@ -58,13 +58,13 @@
           </div>
         </div>
 
-        <div class="details-box text-white" v-if="showDetails">
+        <div class="details-card text-white" v-if="showDetails">
           <div class="position-relative text-center">
             <img :src="albumDetails.poster" :alt="albumDetails.title">
-            <h5 class="py-4">{{albumDetails.title}}</h5>
-            <p class="fw-light">{{albumDetails.author}}</p>
+            <h3 class="py-4">{{albumDetails.title}}</h3>
+            <h4 class="fw-light">{{albumDetails.author}}</h4>
             <p>{{albumDetails.year}}</p>
-            <p class="fw-light">Genre: {{albumDetails.genre}}</p>
+            <p>Genre: {{albumDetails.genre}}</p>
           </div>
           <div class="position-absolute close-button" @click.stop="showDetails = !showDetails">
             <i class="fa-solid fa-xmark"></i>
