@@ -28,7 +28,7 @@
   <div id="app">
     <header class="bg-dark">
       <!-- <img src="/img/logo-small.svg" alt="logo Spotify"> -->
-      <div class="container d-flex align-items-center justify-content-center">
+      <div class="container d-flex align-items-center justify-content-center py-2">
         <div class="row text-white">
           <div class="col">
             <h1>My favorites albums</h1>
@@ -37,7 +37,7 @@
       </div>
     </header>
 
-    <div class="container py-5">
+    <div class="container jt-container py-5">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" v-for="(album, index) in albumsList" :key="index">
           <div class="card album-card">
@@ -55,9 +55,9 @@
   </div>
 
   <!-- JS -->
+  <script src="js/script.js"></script>
 </body>
 <!-- Fine Body -->
-<script src="js/script.js"></script>
 
 </html>
 
