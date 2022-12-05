@@ -45,7 +45,7 @@
 
       <div class="container py-5 position-relative">
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col" v-for="(album, index) in albumsList" :key="index">
             <div @click.stop="getDetails(index)" class="card h-100 album-card mb-5 text-center text-light p-5">
               <img :src="album.poster" :alt="album.title">
