@@ -1,22 +1,27 @@
-// VARIABLES DECLARATION AND INIZIALIZATION
-
-// FUNCTIONS
-
 // VUE
-
-const {createApp} = Vue; 
+const { createApp } = Vue;
 
 createApp({
 
-  data(){
-
+  data() {
+    return {
+      apiUrl: 'server.php',
+      disks: [],
+    }
   },
 
-  methods:{
-
+  methods: {
+    getDisks() {
+      axios.get(this.apiUrl)
+        .then(result => {
+          this.disks = result.data;
+          console.log(this.disks);
+        })
+    }
   },
 
-  mounted(){
-
+  mounted() {
+    this.getDisks();
+    console.log('APP OK')
   }
-}).mount('#app')
+}).mount('#app');

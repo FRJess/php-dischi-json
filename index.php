@@ -23,35 +23,34 @@
 </head>
 
 <!-- Inizio Body -->
-<header class="bg-dark">
-  <img src="/img/logo-small.svg" alt="logo Spotify">
-</header>
 
-<main>
-  <div class="container py-5">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body text-center">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Artista</p>
-            <p class="card-text">Anno</p>
+<body>
+  <div id="app">
+    <header class="bg-dark">
+      <!-- <img src="/img/logo-small.svg" alt="logo Spotify"> -->
+    </header>
+
+    <div class="container py-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" v-for="(disk, index) in disks">
+          <div class="card disk-card">
+            <img :src="disk.poster" :alt="disk.title">
+            <div class="card-body text-center">
+              <h5 class="py-3">{{disk.title}}</h5>
+              <p class="fw-light">{{disk.author}}</p>
+              <p>{{disk.year}}</p>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
-
   </div>
-</main>
-
-
-<body>
 
   <!-- JS -->
-  <script src="js/script.js"></script>
 </body>
 <!-- Fine Body -->
+<script src="js/script.js"></script>
 
 </html>
 
