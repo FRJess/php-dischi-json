@@ -31,6 +31,8 @@
 
 <body>
   <div id="app">
+
+    <!-- Inizio Header -->
     <header class="bg-dark">
       <div class="container d-flex align-items-center justify-content-center py-2">
         <div class="row text-white">
@@ -40,12 +42,15 @@
         </div>
       </div>
     </header>
+    <!-- Fine Header -->
 
+    <!-- Inizio Main -->
     <main class="jt-container">
 
       <div class="container py-5 position-relative">
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Albums List -->  
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col" v-for="(album, index) in albumsList" :key="index">
             <div @click.stop="getDetails(index)" class="card h-100 album-card mb-5 text-center text-light p-5">
               <img :src="album.poster" :alt="album.title">
@@ -58,6 +63,7 @@
           </div>
         </div>
 
+        <!-- Over Album details -->
         <div class="details-card text-white" v-if="showDetails">
           <div class="position-relative text-center">
             <img :src="albumDetails.poster" :alt="albumDetails.title">
@@ -75,6 +81,8 @@
 
 
     </main>
+    <!-- Fine Main -->
+
   </div>
 
   <!-- JS -->

@@ -13,14 +13,15 @@ createApp({
   },
 
   methods: {
+    //get all albums in json
     getAlbums() {
       axios.get(this.apiUrl)
         .then(result => {
           this.albumsList = result.data;
-          // console.log(this.albumsList);
         })
     },
 
+    //get album clicked details
     getDetails(index) {
       this.showDetails = true;
       axios.get(this.apiUrl, {
@@ -29,8 +30,8 @@ createApp({
         }
       })
         .then(result => {
+          //new array with results
           this.albumDetails = result.data;
-          // console.log(this.albumDetails)
         })
     }
   },
