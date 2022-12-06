@@ -57,7 +57,6 @@
               <div class="card-body text-center">
                 <h5 class="album my-4">{{album.title}}</h5>
                 <p class="artist">{{album.author}}</p>
-                <p class="publication-year">{{album.year}}</p>
               </div>
             </div>
           </div>
